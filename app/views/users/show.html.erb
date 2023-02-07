@@ -1,3 +1,12 @@
+<div>
+  <h3><%= @user.name %></h3>
+  <%= image_tag @user.get_profile_image(100,100) %>
+   <% if @user == current_user %>
+    <p><%= link_to "プロフィール編集", user_path(user.id) %></p>
+  <% end %>
+</div>
+
+
 <% @post_images.each do |post_image| %>
 <div>
   <%= link_to post_image_path(post_image.id) do %>
